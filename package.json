@@ -37,12 +37,14 @@
       "patch": "./cordis.patch.yml"
     }
   },
+  "dependencies": {
+    "upsello-ds-bot": "^0.3.5"
+  },
   "peerDependencies": {
     "@deepseek-ai/cordis": "*",
     "@deepseek-ai/dsh-llm": "*",
     "@deepseek-ai/dsh-scope": "*",
     "@deepseek-ai/dsh-tools": "*",
-    "@deepseek-ai/dsh-web": "*",
-    "ds-bot": "*"
+    "@deepseek-ai/dsh-web": "*"
   }
 }

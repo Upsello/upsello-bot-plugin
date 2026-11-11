@@ -17,5 +17,6 @@ Apache License, Version 2.0, Copyright 2026 Fei2411 and the DS Bot contributors
     Bot's src/host/upsello/ into this package. The files carry a modification notice.
   - The four Bot instructions and the top rule come from the same source.
 
-This plugin expects DS Bot's `botRuntime` service. It is not in DS Bot up to 0.3.2; the
-fork at https://github.com/upsello/upsello-ds-bot adds that one line and nothing else.
+When no mounted plugin provides the `botRuntime` service, this plugin mounts
+upsello-ds-bot (https://github.com/upsello/upsello-ds-bot) as a dependency: DS Bot as
+published, with that one service added. DS Bot itself does not provide it up to 0.3.5.

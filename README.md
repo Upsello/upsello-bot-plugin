@@ -12,10 +12,12 @@ work to the others.
 ## Requirements
 
 - dsh with the plugin API this package uses (0.2.2 or newer).
-- [DS Bot](https://github.com/Fei2411/DS-Bot) mounted **before** this plugin, with the
-  `botRuntime` service. That service is one line (`ctx.provide?.('botRuntime', rt)`) and
-  is not in DS Bot up to 0.3.2; use [upsello-ds-bot](https://github.com/upsello/upsello-ds-bot)
-  until it reaches upstream. Without it this plugin waits and adds nothing.
+
+This package brings its own Bot team: when the profile has no runtime publishing the
+`botRuntime` service, it mounts [upsello-ds-bot](https://github.com/upsello/upsello-ds-bot)
+(DS Bot with that one service added) as a dependency. Where a profile already mounts a
+Bot team that provides `botRuntime` — the desktop app does — this package uses that
+runtime and mounts nothing.
 
 ## What it adds
 
@@ -40,11 +42,14 @@ Through the Plugins page, by package name `upsello-bot-plugin`. Through the CLI:
 dsh plugin --profile <profile> add upsello-bot-plugin
 ```
 
-Then make it a bundle, after `ds-bot`, in that profile's `package.json`:
+Then make it a bundle in that profile's `package.json` — anywhere after `@deepseek-ai/dsh-base`:
 
 ```json
-"dsh": { "profile": { "bundles": ["@deepseek-ai/dsh-base", "@deepseek-ai/dsh-web-app", "ds-bot", "upsello-bot-plugin"] } }
+"dsh": { "profile": { "bundles": ["@deepseek-ai/dsh-base", "@deepseek-ai/dsh-web-app", "upsello-bot-plugin"] } }
 ```
+
+A profile that already mounts DS Bot keeps it: `ds-bot` and `upsello-bot-plugin` share one
+Bot team.
 
 ## Connect a store
 
