@@ -1,6 +1,6 @@
 {
   "name": "upsello-bot-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The Shopify ops layer of Upsello Bot, packaged as a dsh plugin: four Agents, store read and write tools, skills and the weekly loop",
   "keywords": [
     "dsh-plugin",
