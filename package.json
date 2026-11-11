@@ -1,0 +1,48 @@
+{
+  "name": "upsello-bot-plugin",
+  "version": "0.1.0",
+  "description": "The Shopify ops layer of Upsello Bot, packaged as a dsh plugin: four Agents, store read and write tools, skills and the weekly loop",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "shopify",
+    "agent",
+    "upsello"
+  ],
+  "homepage": "https://upsello.ai/bot",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upsello/upsello-bot-plugin.git"
+  },
+  "bugs": {
+    "url": "https://github.com/upsello/upsello-bot-plugin/issues"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "src/",
+    "shopify-app.json",
+    "cordis.patch.yml",
+    "NOTICE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-llm": "*",
+    "@deepseek-ai/dsh-scope": "*",
+    "@deepseek-ai/dsh-tools": "*",
+    "@deepseek-ai/dsh-web": "*",
+    "ds-bot": "*"
+  }
+}

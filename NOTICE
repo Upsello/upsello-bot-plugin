@@ -1,0 +1,21 @@
+Upsello Bot Plugin
+Copyright 2026 Upsello
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+==============================================================================
+Third-party code
+==============================================================================
+
+DS Bot (https://github.com/Fei2411/DS-Bot)
+Apache License, Version 2.0, Copyright 2026 Fei2411 and the DS Bot contributors
+
+  - src/shared.js carries two helpers taken from DS Bot's host so this package does not
+    import another plugin's files: `output` (src/host/tools.js) and `replaceFile`
+    (src/host/files.js).
+  - The tools, board, plan, agenda, digest, skills and team modules were moved out of DS
+    Bot's src/host/upsello/ into this package. The files carry a modification notice.
+  - The four Bot instructions and the top rule come from the same source.
+
+This plugin expects DS Bot's `botRuntime` service. It is not in DS Bot up to 0.3.2; the
+fork at https://github.com/upsello/upsello-ds-bot adds that one line and nothing else.

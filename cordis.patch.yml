@@ -1,0 +1,6 @@
+# Mounts the Shopify ops layer on top of ds-bot. It takes over the team runtime ds-bot
+# publishes as `botRuntime`, so this entry waits for ds-bot to mount, wherever the
+# bundles are listed.
+- insert:
+    - id: upsello-bot-plugin
+      name: upsello-bot-plugin
